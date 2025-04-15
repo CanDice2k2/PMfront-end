@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins","san-serif";
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.loginContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #25252b;
+}
+@property --a{
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+.box{
+    position: relative;
+    
+    
+    background: repeating-conic-gradient(from var(--a), #ff2770 0%, #ff2770 5%, transparent 5%, transparent 40%, #ff2770 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@keyframes rotating {
+    0%
+    {
+        --a:0deg;
+    }
+    100%
+    {
+        --a: 360deg;
+    }
+    
+}
+ .box::before{
+    content:"";
+    position: absolue;
+    width: 100%;
+    height: 100%;
+    background: repeating-conic-gradient(from var(--a), #45f3ff 0%, #45f3ff 5%, transparent 5%, transparent 40%, #45f3ff 50%);
+    filter: drop-shadow(0 15px 50px #000);
+    border-radius: 20px;
+    animation: rotating 4s linear infinite;
+    animation-delay: -1s;
+}
+.box::after{
+    content:"";
+    position: absolute;
+    inset: 4px;
+    background: #2d2d39;
+    border-radius: 15px;
+    border: 5px solid #25252b;
+}
+.login{
+    position: absolute;
+    inset: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    background: rgb(0,0,0,0.2);
+    z-index: 1000;
+    box-shadow: inset 0 10px 20px rgb(0,0,0,0.5);
+    border-bottom: 2px solid rgb(255,255,255,0.5);
+}
+
+.auth-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.logo-text {
+    background: linear-gradient(90deg, #1877F2, #0a59c1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    position: relative;
+}
+
+.logo-text::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #1877F2, #0a59c1);
+    border-radius: 2px;
+}
+
+.form-container {
+    transform: translateY(0);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+input:focus {
+    outline: none;
+    border-color: #1877F2;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+button[type="submit"] {
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(24, 119, 242, 0.2);
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(24, 119, 242, 0.3);
+}
+
+.input-icon {
+    color: #8f9296;
+}
+
+input:focus + .input-icon {
+    color: #1877F2;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-in;
+}
+
+.fade-in-delay {
+    animation: fadeIn 0.8s ease-in 0.3s both;
+}
+
+.fade-in-delay-2 {
+    animation: fadeIn 0.8s ease-in 0.6s both;
+}
+
+.fade-in-delay-3 {
+    animation: fadeIn 0.8s ease-in 0.9s both;
+}
+
+.slide-in {
+    animation: slideIn 0.8s ease-out both;
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float 7s ease-in-out 1s infinite;
+}
+
+.animate-float-slow {
+    animation: float 8s ease-in-out 2s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-icon-container {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #8f9296;
+    transition: color 0.2s ease;
+}
+
+.has-icon {
+    padding-left: 40px;
+}
