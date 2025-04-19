@@ -12,6 +12,7 @@ import Loader from "./pages/Loader/Loader";
 import AcceptInvitation from "./pages/Project/AcceptInvitation";
 import Subscription from "./pages/subscription/Subscription";
 import UpgradeSuccess from "./pages/subscription/UpgradeSuccess";
+import Dashboard from "./pages/Home/DashBoard";
 import { getUserSubscription } from "./redux/Subscription/Action";
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />}></Route>
+            <Route path="/" element={<Dashboard />}></Route>
+            <Route path="/projects" element={<Home />}></Route>
             <Route path="/project/:id" element={<ProjectDetails />}></Route>
             <Route path="/project/update/:id" element={<UpdateProjectForm />}></Route>
             <Route
