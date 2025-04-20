@@ -14,7 +14,7 @@ import Subscription from "./pages/subscription/Subscription";
 import UpgradeSuccess from "./pages/subscription/UpgradeSuccess";
 import Dashboard from "./pages/Home/DashBoard";
 import { getUserSubscription } from "./redux/Subscription/Action";
-
+import LabelManager from "./pages/Label/LabelManager";
 function App() {
   const dispatch = useDispatch();
   const { auth } = useSelector((store) => store);
@@ -34,6 +34,7 @@ function App() {
             <Route path="/projects" element={<Home />}></Route>
             <Route path="/project/:id" element={<ProjectDetails />}></Route>
             <Route path="/project/update/:id" element={<UpdateProjectForm />}></Route>
+            <Route path="/labels" element={<LabelManager/>}></Route>
             <Route
               path="/project/:projectId/issue/:issueId"
               element={<IssueDetails />}
