@@ -242,7 +242,7 @@ const Dashboard = () => {
       </div>
 
       {/* Recent projects section */}
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <Card>
           <CardHeader>
             <CardTitle>Dự án gần đây</CardTitle>
@@ -280,7 +280,7 @@ const Dashboard = () => {
             )}
           </CardContent>
         </Card>
-      </div>
+      </div> */}
     </div>
   );
 };
